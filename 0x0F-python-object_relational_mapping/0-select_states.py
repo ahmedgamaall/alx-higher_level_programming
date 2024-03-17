@@ -13,7 +13,7 @@ if __name__ == "__main__":
         password=argv[2],
         database=argv[3]
     )
-    crsr = cnctn.crsr()
+    crsr = cnctn.cursor()
     crsr.execute("SELECT * FROM states ORDER BY id ASC")
     for r in crsr.fetchall():
         print(r)
