@@ -18,9 +18,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=eng)
     sess = Session()
 
-    all = sess.query(State.id, State.name, City.id, City.name)\
+    allCt = sess.query(State.id, State.name, City.id, City.name)\
         .join(City).all()
-    for ct in all:
+    for ct in allCt:
         print("{:d}: ({:s}) >> {:d}: ({:s})"
               .format(ct[0], ct[1], ct[2], ct[3]))
     sess.close()
